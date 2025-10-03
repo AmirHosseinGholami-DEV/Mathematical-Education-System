@@ -1,0 +1,552 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آکادمی ریاضی امیرشاد</title>
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-1.css' %}">
+    <!-- Switcher CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/switcher.css' %}">
+    <!-- Skins -->
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-1.css' %}" class="alternate-style" title="color-1" disabled>
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-2.css' %}" class="alternate-style" title="color-2" disabled>
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-3.css' %}" class="alternate-style" title="color-3" disabled>
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-4.css' %}" class="alternate-style" title="color-4" disabled>
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-5.css' %}" class="alternate-style" title="color-5" disabled>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Box Icon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Favicon CSS -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+    <!-- Magnific Pop-Up CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!-- jQuery Js -->
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+</head>
+
+<body>
+
+    <!-- ====== Header ====== -->
+    <header class="header-area">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a href="#" class="fontw-600 navbar-brand" style="font-family: Rubik Black;"><i class="fa fa-gg fontw-800"></i>امیرشاد</a>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <a style="font-family: Rubik Black; font-size: 30px;" href="#" class="fontw-600 navbar-brand"><i class="fa fa-gg fontw-800"></i>آکادمی ریاضی امیرشاد</a>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item"><a href="#home" class="nav-link smooth-scroll" style="font-family: vazir;">خانه</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link smooth-scroll" href="#blog" role="button" data-bs-toggle="dropdown" aria-haspopup="tree" aria-expanded="false" style="font-family: vazir;">سوالات و آموزش<i class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+                                    {% if user.is_authenticated %}
+                                    <li><a class="dropdown-item" href="{% url 'Home Seven' %}" style="font-family: vazir;">هفتم </a></li>
+                                    {% else %}
+                                    <li><a class="dropdown-item" href="{% url 'Login Page' %}" style="font-family: vazir;">هفتم </a></li>
+                                    {% endif %} {% if user.is_authenticated %}
+                                    <li><a class="dropdown-item" href="{% url 'Home Eight' %}" style="font-family: vazir;">هشتم </a></li>
+                                    {% else %}
+                                    <li><a class="dropdown-item" href="{% url 'Login Page' %}" style="font-family: vazir;">هشتم </a></li>
+                                    {% endif %} {% if user.is_authenticated %}
+                                    <li><a class="dropdown-item" href="{% url 'Home Nine' %}" style="font-family: vazir;">نهم </a></li>
+                                    {% else %}
+                                    <li><a class="dropdown-item" href="{% url 'Login Page' %}" style="font-family: vazir;">نهم </a></li>
+                                    {% endif %}
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="#services" class="nav-link smooth-scroll" style="font-family: vazir;">آنچه ارائه می دهیم</a></li>
+
+                            <li class="nav-item"><a href="#abilities" class="nav-link smooth-scroll" style="font-family: vazir;">ویژگی های وبسایت</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link smooth-scroll" href="#contact" role="button" data-bs-toggle="dropdown" aria-haspopup="tree" aria-expanded="false" style="font-family: vazir;">ارتباط با ما<i class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#contact" style="font-family: vazir;">تماس</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link smooth-scroll" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="tree" aria-expanded="false" style="font-family: vazir;">امکانات<i class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'Video' %}" style="font-family: vazir;">محتوای ریاضی</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'Education System' %}" style="font-family: vazir;">حل نمونه سوال</a></li>
+                                    <li><a class="dropdown-item" href="" style="font-family: vazir;">تجاری سازی </a></li>
+                                    <li><a class="dropdown-item" href="{% url 'Stem' %}" style="font-family: vazir;">استم</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'ai' %}" style="font-family: vazir;">هوش مصنوعی</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                {% if user.is_authenticated %}
+                <form action="{% url 'Logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button style="font-family: vazir;" type="submit" class="login-button me-auto ms-2" style="border: none;">
+                            (خروج)
+                        </button>
+                </form>
+                {% else %}
+                <a style="font-family: vazir;" href="{% url 'Login Page' %}" class="login-button me-auto ms-2">ثبت نام / ورود</a> {% endif %}
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- ====== Header ====== -->
+
+    <!-- ====== Main Content ====== -->
+    <main class="main-content">
+
+        <!-- ====== Home section ====== -->
+        <section class="home padd-180" id="home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-6">
+                        <div class="home-content">
+                            <h1 class="mb-4 mt-5"><span class="title-span" style="font-family: Rubik Black;"> آکادمی ریاضی امیرشاد</span></h1>
+                            <hr>
+                            <p style="font-size: 20px; font-family: vazir;">ریاضی را شیرین یاد بگیرید...</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="home-img">
+                            <img src="{% static 'new_image/borazjan.png' %}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <!-- ====== Blog section ====== -->
+                <section class="blog padd-100" id="blog">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Title -->
+                            <div class="col-lg-12">
+                                <div class="section-title">
+                                    <h2 class="mb-4 text-shadow" style="font-family: Rubik Black;">پایه تحصیلی <span class="title-span" style="font-family: Rubik Black;">خود را انتخاب کنید</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-lg-11 justify-content-center mx-lg-5 mt-4">
+                            <div class="col-lg-4 col-md-10">
+                                <div class="blog-entry">
+                                    <div class="blog-img">
+                                        <img src="{% static 'new_image/Seven Grade.png.jpeg' %}" alt="picture" class="image-fluid">
+                                    </div>
+                                    <div class="blog-entry-text">
+                                        <h3 style="font-family: Rubik Black;">پایه <span class="title-span" style="font-family: Rubik Black;">هفتم</span> </h3>
+                                        <p style="font-family: vazir;">برای دریافت محتویات مربوط به پایه هفتم کلیک کنید...</p>
+                                        <div class="d-flex blog-more">
+                                            {% if user.is_authenticated %}
+                                            <a href="{% url 'Home Seven' %}" style="font-family: vazir;">جزئیات بیشتر...</a> {% else %}
+                                            <a href="{% url 'Login Page' %}"style="font-family: vazir;">جزئیات بیشتر...</a> {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-10">
+                                <div class="blog-entry">
+                                    <div class="blog-img">
+                                        <img src="{% static 'new_image/Eight Grade.png.jpeg' %}" alt="picture" class="image-fluid">
+                                    </div>
+                                    <div class="blog-entry-text">
+                                        <h3 style="font-family: Rubik Black;">پایه <span class="title-span" style="font-family: Rubik Black;">هشتم</span> </h3>
+                                        <p style="font-family: vazir;">برای دریافت محتویات مربوط به پایه هشتم کلیک کنید..</p>
+                                        <div class="d-flex blog-more">
+                                            {% if user.is_authenticated %}
+                                            <a href="{% url 'Home Eight' %}" style="font-family: vazir;">جزئیات بیشتر...</a> {% else %}
+                                            <a href="{% url 'Login Page' %}" style="font-family: vazir;">جزئیات بیشتر...</a> {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-10">
+                                <div class="blog-entry">
+                                    <div class="blog-img">
+                                        <img src="{% static 'new_image/Nine Grade.png.jpeg' %}" alt="picture" class="image-fluid">
+                                    </div>
+                                    <div class="blog-entry-text">
+                                        <h3 style="font-family: Rubik Black;">پایه <span style="font-family: Rubik Black;" class="title-span">نهم </span> </h3>
+                                        <p style="font-family: vazir;">برای دریافت محتویات مربوط به پایه نهم کلیک کنید...</p>
+                                        <div class="d-flex blog-more">
+                                            {% if user.is_authenticated %}
+                                            <a href="{% url 'Home Nine' %}" style="font-family: vazir;">جزئیات بیشتر...</a> {% else %}
+                                            <a href="{% url 'Login Page' %}" style="font-family: vazir;">جزئیات بیشتر...</a> {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <!-- Button more -->
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ====== Blog section ====== -->
+                <!-- ====== Services section ====== -->
+                <section class="services padd-100" id="services">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Title -->
+                            <div class="col-lg-12">
+                                <div class="section-title">
+                                    <h2 class="mb-4 text-shadow" style="font-family: Rubik Black;"><span style="font-family: Rubik Black;" class="title-span">خدماتی</span> که ما ارائه می دهیم</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 mt-5">
+                                <!-- box 1 -->
+                                <div class="col-lg-12 mb-4">
+                                    <div class="single-service">
+                                        <!-- Icon -->
+                                        <div class="service-icon mt-2">
+                                            <i class="bx bx-windows"></i>
+                                        </div>
+                                        <!-- Content -->
+                                        <div class="service-content mt-3">
+                                            <h4 style="font-family: Rubik Black;">آموزش</h4>
+                                            <p style="font-family: vazir;">شما می توانید مطالب هر فصل را در قالب فایل pdf دانلود نمایید و به آسانی مطالب هر فصل را مرور کنید</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- box 1 -->
+                                <div class="col-lg-12 mb-4">
+                                    <div class="single-service">
+                                        <!-- Icon -->
+                                        <div class="service-icon mt-2">
+                                            <i class="bx bx-code-alt"></i> </div>
+                                        <!-- Content -->
+                                        <div class="service-content mt-3">
+                                            <h4 style="font-family: Rubik Black;">امتحانات</h4>
+                                            <p style="font-family: vazir;"> شما می توانید در هر فصل از ریاضی نمونه سوالات مربوط به آن را دریافت نمایید و علاوه بر آن می توانید یک آزمون کلی از هر فصل ریاضی بدهید و سطح خود را مورد ارزشیابی قرار دهید.حتی شما می توانید جزوه های مربوط به
+                                                هر فصل را دانلود نمایید</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- box 1 -->
+
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="serv-img">
+                                    <img src="{% static 'new_image/خدمات-آنلاین-1.jpg' %}" alt="picture">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-5">
+                                <!-- box 1 -->
+                                <div class="col-lg-12 mb-4">
+                                    <div class="single-service">
+                                        <!-- Icon -->
+                                        <div class="service-icon mt-2">
+                                            <i class="bx bxs-palette"></i>
+                                        </div>
+                                        <!-- Content -->
+                                        <div class="service-content mt-3">
+                                            <h4 style="font-family: Rubik Black;">بازی</h4>
+                                            <p style="font-family: vazir;">
+                                                ما قصد داریم در این بخش بازی های جذابی را که محتوای ریاضی دارند در اختیار شما قرار بدهیم تا شما همراه با بازی کردن ریاضی را بیاموزید و حتی در اوقات فراغت خود نیز بتوانید ریاضی بیاموزید
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- box 1 -->
+                                <div class="col-lg-12 mb-4">
+                                    <div class="single-service">
+                                        <!-- Icon -->
+                                        <div class="service-icon mt-2">
+                                            <i class="fa fa-share-alt"></i>
+                                        </div>
+                                        <!-- Content -->
+                                        <div class="service-content mt-3">
+                                            <h4 style="font-family: Rubik Black;">هوش مصنوعی و استم</h4>
+                                            <p style="font-family: vazir;">ش ما میتوانید با استفاده از ابزارهای بروز دنیا و علم نوین آموزش ریاضی،به آسانی مفاهیم کتب درسی و حتی فراتر از آن را یاد بگیرید</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- box 1 -->
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ====== Home section ====== -->
+                <!-- ====== Skills section ====== -->
+                <section class="skills padd-100" id="abilities">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Title -->
+                            <div class="col-lg-12">
+                                <div class="section-title">
+                                    <h2 class="mb-4 text-shadow" style="font-family: Rubik Black;"><span class="title-span" style="font-family: Rubik Black;">ویژگی </span> های ما</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5 col-sm-12 mt-lg-5">
+                                <div class="skill">
+                                    <!-- item 1 -->
+                                    <div class="skill-item">
+                                        <h5 style="font-family: vazir;">دسترسی آسان</h5>
+                                        <!-- Progress -->
+                                        <div class="skill-progress">
+                                            <div class="progres" style="width: 0px;" aria-valuenow="95" aria-valuemin="0">
+                                                <span>95%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- item 2 -->
+                                    <div class="skill-item">
+                                        <h5 style="font-family: vazir;">راحتی</h5>
+                                        <!-- Progress -->
+                                        <div class="skill-progress">
+                                            <div class="progres" style="width: 0px;" aria-valuenow="100" aria-valuemin="0">
+                                                <span>100%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- item 3 -->
+                                    <div class="skill-item">
+                                        <h5 style="font-family: vazir;">ux و ui ساده</h5>
+                                        <!-- Progress -->
+                                        <div class="skill-progress">
+                                            <div class="progres" style="width: 0px;" aria-valuenow="98" aria-valuemin="0">
+                                                <span>98%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- item 4 -->
+                                    <div class="skill-item">
+                                        <h5 style="font-family: vazir;">محتویات بروز</h5>
+                                        <!-- Progress -->
+                                        <div class="skill-progress">
+                                            <div class="progres" style="width: 0px;" aria-valuenow="100" aria-valuemin="0">
+                                                <span>100%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- item 5 -->
+                                    <div class="skill-item">
+                                        <h5 style="font-family: vazir;">کاربر پسند بودن</h5>
+                                        <!-- Progress -->
+                                        <div class="skill-progress">
+                                            <div class="progres" style="width: 0px;" aria-valuenow="97" aria-valuemin="0">
+                                                <span>97%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Skills text -->
+                                <div class="row col-12 justify-content-center skills-text">
+                                    <div class="mt-3">
+                                        <h2 class="mb-4" style="font-family: Rubik Black;">برجسته ترین ویژگی ها</h2>
+                                        <p style="font-family: vazir;">این وبسایت در عین طراحی ساده و زیبا،دارای محتویات بروز و دقیق علمی است و با آیتم های متنوع مثل بازی ،استم و هوش مصنوعی ریاضی را به دانش آموزان آموزش میدهد</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 mx-lg-5">
+                                <!-- Image -->
+                                <div class="skill-img">
+                                    <img src="{% static 'new_image/مهارت-جدید-1024x682-1.jpg' %}" alt="picture">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ====== Skills section ====== -->
+                <!-- ====== Contact section ====== -->
+                <section class="contact padd-100" id="contact">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Title -->
+                            <div class="col-lg-12">
+                                <div class="section-title">
+                                    <h2 class="mb-4 text-shadow" style="font-family: Rubik Black;"><span class="title-span" style="font-family: Rubik Black;">  ارتباط </span>با ما </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5 col-md-11 mb-md-4">
+                                <div class="info-wrap">
+                                    <ul>
+                                        <li class="phone">
+                                            <i class="bx bxs-phone-call"></i>
+                                            <strong class="text-shadow" style="font-family: Rubik Black;">شماره تماس :</strong>
+                                            <span style="font-family: vazir;" dir="ltr">+98 936 650 6195</span>
+                                        </li>
+                                        <li class="email">
+                                            <i class="bx bx-envelope"></i>
+                                            <strong class="text-shadow" style="font-family: Rubik Black;">ایمیل :</strong>
+                                            <span style="font-family: vazir;">Amirshad@gmail.com</span>
+                                        </li>
+                                        <li class="address">
+                                            <i class="bx bx-map"></i>
+                                            <strong class="text-shadow" style="font-family: Rubik Black;">آدرس :</strong>
+                                            <span style="font-family: vazir;">ایران ، بوشهر ، شهرستان دشتستان برازجان</span>
+                                        </li>
+                                        <li class="address">
+                                            <i class="bx bx-mail-send"></i>
+                                            <strong class="text-shadow" style="font-family: Rubik Black;">پیام رسان ها :</strong>
+                                            <span style="font-family: vazir;">بله ، تلگرام ،واتساپ</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-11">
+                                <form action="{% url 'contact' %}" method="post" class="send-form">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <!-- Name -->
+                                        <div class="col-md-6">
+                                            <input style="font-family: vazir;" type="text" name="name" id="name-field" class="form-control mb-3" placeholder="نام" required="">
+                                        </div>
+                                        <!-- Email -->
+                                        <div class="col-md-6">
+                                            <input style="font-family: vazir;" type="email" class="form-control" name="email" id="email-field" placeholder="ایمیل" required="">
+                                        </div>
+                                        <!-- Subject -->
+                                        <div class="col-md-12">
+                                            <input style="font-family: vazir;" type="text" class="form-control mb-4" name="subject" id="subject-field" placeholder="موضوع" required="">
+                                        </div>
+                                        <!-- Message -->
+                                        <div class="col-md-12 mb-3">
+                                            <textarea style="font-family: vazir;" class="form-control mb-2" name="message" rows="5" id="message-field" placeholder="پیام شما" required=""></textarea>
+                                        </div>
+                                        <!-- Button Send -->
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="button btn-3" style="font-family: Rubik Black;">ارسال پیام</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ====== Contact section ====== -->
+
+
+                <!-- Counter -->
+                <div class="row justify-content-center text-center mt-5 pt-4">
+                    <div class="col-lg-3 col-md-6">
+                        <!-- box 1 -->
+                        <div class="counter-box">
+                            <i class="fa fa-smile-o mb-5"></i>
+                            <span class="integers" style="font-family: vazir;">120</span>
+                            <p style="font-family: Rubik Black;">مشتریان راضی</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <!-- box 2 -->
+                        <div class="counter-box">
+                            <i class="bx bx-trophy mb-5"></i>
+                            <span class="integers" style="font-family: vazir;">3</span>
+                            <p style="font-family: Rubik Black;">دریافت جایزه</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <!-- box 4 -->
+                        <div class="counter-box">
+                            <i class="fa fa-diamond mb-5"></i>
+                            <span class="integers" style="font-family: vazir;">23</span>
+                            <p style="font-family: Rubik Black;">تجربه</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ====== Home section ====== -->
+
+
+
+        <!-- ====== Footer section ====== -->
+        <footer class="footer padd-100 py-3">
+            <div class="container">
+                <div class="row mb-3 mt-4 justify-content-center">
+                    <div class="ft-box col-md-4">
+                        <div class="mb-4 ft-about">
+                            <h2 style="font-family: Rubik Black;">درباره ما</h2>
+                            <p style="font-family: vazir;">ما تیمی از مدرسه کردی برازجان هستیم که در جهت ارتقای سطح علمی جامعه خود اقدام به ساخت این وبسایت در حوزه ریاضی کردیم</p>
+                        </div>
+                    </div>
+                    <div class="ft-box col-md-3">
+                        <div class="mb-4 ml-md-4">
+                            <h2 style="font-family: Rubik Black;">لینک ها</h2>
+                            <ul class="list-unstyled">
+                                <li style="font-family: vazir;"><a href="{% url 'home' %}"><i class="fa fa-long-arrow-left"></i>خانه</a></li>
+                                <li style="font-family: vazir;"><a href="{% url 'Video' %}"><i class="fa fa-long-arrow-left"></i>محتوای ریاضی</a></li>
+                                <li style="font-family: vazir;"><a href="{% url 'Education System' %}"><i class="fa fa-long-arrow-left"></i>حل نمونه سوال</a></li>
+                                <li style="font-family: vazir;"><a href="{% url 'Stem' %}"><i class="fa fa-long-arrow-left"></i>استم</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <h2 style="font-family: Rubik Black;">آیا سوالی دارید؟</h2>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li style="font-family: vazir;"><a href="#"><span class="bx bx-map"></span><span class="text">ایران،بوشهر،شهرستان دشتستان،برازجان،خیابان نبوت،مدرسه کردی</span></a></li>
+                                    <li style="font-family: vazir;"><a href="#"><span class="bx bxs-phone-call"></span><span class="text" dir="ltr">+98 936 650 6195</span></a></li>
+                                    <li style="font-family: vazir;"><a href="#"><span class="bx bx-envelope"></span><span class="text">Amirshad@gmail.com</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="copy-right mt-2 mb-1">
+                            <p style="font-family: vazir;">ساخته شده توسط <span class="title-span" style="font-family: Rubik Black;">ارشاد مزارعی نژاد و امیرحسین غلامی</span> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ====== Footer section ====== -->
+
+
+    </main>
+    <!-- ====== Main Content ====== -->
+
+    <!-- Scripts Js -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+    <!-- Switcher -->
+    <script src="{% static 'assets/js/switcher.js' %}"></script>
+    <!-- Bootstrap Js -->
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Counterup Js -->
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <!-- Easing Js -->
+    <script src="{% static 'assets/js/jquery.easing.1.3.js' %}"></script>
+    <!-- Magnific Pop-Up Js -->
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Waypoints Js -->
+    <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+    <!-- Typed Js -->
+    <script src="{% static 'assets/js/typed.umd.js' %}"></script>
+    <!-- Wow Js -->
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <!-- OWl Carousel JS -->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <!-- Isotop Js -->
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+</body>
+
+</html>

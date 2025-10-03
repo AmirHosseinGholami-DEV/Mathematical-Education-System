@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/style.css" type="text/css">
+    <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}" type="text/css">
+    <title>شهر ریاضی || ریاضی هفتم</title>
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="{% url "Home Page" %}"><img src="{% static "img/logo.png" %}" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                  <li><a href="{% url "Home Page" %}">خانه</a></li>
+                  <li><a href="{% url "Video" %}">محتوای ریاضی</a></li>
+                  <li><a href="{% url "Education System" %}">حل نمونه سوال</a></li>
+                  <li><a href="#">تجاری سازی</a></li>
+                  <li><a href="{% url "Stem" %}">استم</a></li>
+                  <li><a href="{% url "ai" %}">هوش مصنوعی</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="Animation_Up">فصل ششم ریاضی هفتم</h1>
+    </section>
+
+    <!------------------ blog page content ------------>
+
+    <section class="blog-content">
+        <div class="row">
+            <div class="blog-left">
+                <img src="{% static "img/seven/Six.png" %}"  alt="blog" style="border-radius: 12px; height: 700px;" class="Animation_Opacity">
+                <h2 class="Animation_Up">سطح و حجم</h2>
+                <div class="Animation_Down">
+                    <p>
+                        در این فصل شما دانش آموزان گرامی میتوانید به سادگی با استفاده از این فایل ها فصل ششم ریاضی هفتم را به خوبی یاد بگیرید.
+                    </p>
+                    <br>
+                    <p>
+                        مطالبی که یاد میگیرید:
+                    </p>
+                    <br>
+                    <p>
+                        1_ حجم های هندسی
+                    </p>
+                    <br>
+                    <p>
+                        2_ محاسبه حجم های منشوری
+                    </p>
+                    <br>
+                    <p>
+                        3_ مساحت جانبی و کل
+                    </p>
+                    <br>
+                    <p>
+                        4_ حجم و سطح
+                    </p>
+                </div>
+            </div>
+            <div class="blog-right">
+                <h3>فایل های مرتبط</h3>
+                <div style="background-color: #f8e8e8;">
+                    <a href="{% url "Seven Section Six pdf" %}">
+                        <span>دانلود فایل pdf فصل ششم ریاضی هفتم</span>
+                    </a>
+                </div>
+
+                <div style="background-color: #f8e8e8;">
+                    <a href="https://www.mathplayground.com/">
+                        <span> بازی فصل ششم ریاضی هفتم</span>
+                    </a>
+                </div>
+                <div style="background-color: #f8e8e8;">
+                    <a href="https://gama.ir/azmoon/testDetail/7E0Rly">
+                        <span> آزمون فصل ششم ریاضی هفتم</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static "js/script.js" %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+.Payeh {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-30px);
+    transition: all 2s;
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(10px);
+}
+.Tozih {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(+30px);
+    transition: all 2s;
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(10px);
+}
+.Img_7 {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-30px);
+    transition: all 2s;
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(10px);
+}
+.Lets_To_Seven {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(+30px);
+    transition: all 2s;
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0px);
+}

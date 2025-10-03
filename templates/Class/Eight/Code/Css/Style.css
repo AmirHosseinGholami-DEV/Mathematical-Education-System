@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Vazir";
+    src: url(../../../../Font/Vazir-Regular.ttf);
+}
+
+body {
+    background-color: rgb(178, 248, 248);
+}
+
+img {
+    border-radius: 12px;
+}
+
+#Section_One_Button {
+    margin-top: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    font-family: "Vazir";
+    transition: all 0.3s ease-in-out;
+    height: 50px;
+    width: 200px;
+    background-color: yellow;
+    border-radius: 8px;
+    border: none;
+}
+
+#Section_One_Button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2), -15px -10px 20px rgba(255, 255, 255, 0.5);
+}
+
+.Section_One {
+    margin-left: 350px;
+    margin-top: 30px;
+}
+
+.Section_Two {
+    margin-left: 750px;
+    margin-top: -320px;
+}
+
+.Section_One_Image {
+    width: 200px;
+    border-radius: 12px;
+}
+
+.Add {
+    height: 70px;
+}

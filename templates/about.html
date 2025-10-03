@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}" type="text/css">
+    <title>شهر ریاضی || درباره ما</title>
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="{% url "Home Page" %}"><img src="{% static "img/logo.png" %}" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                  <li><a href="{% url "Home Page" %}">خانه</a></li>
+                  <li><a href="{% url "Video" %}">محتوای ریاضی</a></li>
+                  <li><a href="{% url "Education System" %}">حل نمونه سوال</a></li>
+                  <li><a href="#">تجاری سازی</a></li>
+                  {% if user.is_authenticated %}
+                        <li><a href="{% url "Stem" %}">استم</a></li>
+                    {% else %}
+                        <li><a href="{% url "Login Page" %}">استم</a></li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url "ai" %}">هوش مصنوعی</a></li>
+                    {% else %}
+                        <li><a href="{% url "Login Page" %}">هوش مصنوعی</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>درباره ما</h1>
+    </section>
+
+    <!------------------- about us content ---------------------->
+
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1>توسعه دهندگان وبسایت آکادمی ریاضی امیرشاد </h1>
+                <p>
+                    با سلام خدمت شما دانش آموزان گرامی ما یعنی تیم برنامه نویسی Math Developer با این پروژه در خدمت شما بودیم. هدف ما از ساخت این پروژه این بود که بتونیم به دانش آموزان کشورمون در زمینه علم ریاضی کمک کنیم. وبه غیر از این ما در تلاشیم که با ارتقا دادن این
+                    وبسیات کاری بکنیم که معلم ها هم از این وبسیات سودی ببرند امیدواریم که تونسته باشیم با این کاری که کردیم قدمی برای پیشرفت کشور عزیزمون ایران برداشته باشیم <br> <br>ارادتمند شما امیر حسین غلامی و ارشاد مزارعی نژاد
+                </p>
+            </div>
+            <div class="about-col">
+                <img src="{% static "img/Java Script.jpg" %}" alt="about" style="border-radius: 12px;">
+            </div>
+        </div>
+    </section>
+    <script src="{% static "js/script.js" %}"></script>
+</body>
+
+</html>

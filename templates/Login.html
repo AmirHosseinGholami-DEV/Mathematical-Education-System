@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آکادمی ریاضی امیرشاد</title>
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-1.css' %}">
+    <!-- Switcher CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/switcher.css' %}">
+    <!-- Skins -->
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-1.css' %}" class="alternate-style" title="color-1" disabled>
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-2.css' %}" class="alternate-style" title="color-2" disabled>
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-3.css' %}" class="alternate-style" title="color-3" disabled>
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-4.css' %}" class="alternate-style" title="color-4" disabled>
+    <link rel="stylesheet" href="{% static 'assets/css/skins/color-5.css' %}" class="alternate-style" title="color-5" disabled>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Box Icon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Favicon CSS -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- jQuery Js -->
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+</head>
+
+<body>
+    <!-- ====== Main Content ====== -->
+    <main class="main-content">
+
+        <!-- ====== login section ====== -->
+        <section class="login padd-70">
+            <div class="container">
+                <div class="row justify-content-center text-end">
+                    <div class="col-12 col-lg-6 pt-4">
+                        <div class="login-content me-lg-5 mx-sm-2">
+                            <form class="form" action="{% url 'Login Page' %}" method="post">
+                                {% csrf_token %}
+                                <div class="text-center mt-2">
+                                    <h4 style="font-family: Rubik Black;">ورود به حساب</h4>
+                                    <p class="mt-1">اطلاعات خود را برای ورود به حساب وارد کنید.</p>
+                                </div>
+                                <div class="flex-column mb-2">
+                                    <div class="inputForm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" height="20"><g data-name="Layer 3" id="Layer_3"><path d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"></path></g></svg>
+                                        <input placeholder="نام کاربری خود را وارد کنید" class="input" type="text" name="username">
+                                    </div>
+                                </div>
+                                <div class="flex-column">
+                                    <div class="inputForm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="-64 0 512 512" height="20"><path d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"></path><path d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"></path></svg>
+                                        <input placeholder="رمز عبور خود را وارد کنید" class="input" type="password" name="password">
+                                    </div>
+                                </div>
+                                <button class="button" style="font-family: Rubik Black;">ورود به حساب</button>
+
+                                </p>
+                                <p class="p line">-------------------------------- یا ----------------------------------</p>
+                                <p class="p">حساب کاربری ندارید؟ <a href="{% url 'register' %}" class="span" style="font-family: Rubik Black;"> ثبت نام کنید</a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="login-img">
+                            <img src="{% static 'assets/images/sign-up.png' %}" alt="error-404" class="image-fluid">
+                        </div>
+                    </div>
+                    <a href="index.html" class="back-button text-center mt-5 col-lg-2">بازگشت به صفحه اصلی</a>
+                </div>
+            </div>
+        </section>
+        <!-- ====== 404 section ====== -->
+
+        <!-- ====== Footer section ====== -->
+        <footer class="footer padd-100 py-3">
+            <div class="container">
+                <div class="row mb-3 mt-4 justify-content-center">
+                    <div class="ft-box col-md-4">
+                        <div class="mb-4 ft-about">
+                            <h2>درباره ما</h2>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز</p>
+                        </div>
+                    </div>
+                    <div class="ft-box col-md-3">
+                        <div class="mb-4 ml-md-4">
+                            <h2>لینک ها</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="#"><i class="fa fa-long-arrow-left"></i>خانه</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-left"></i>درباره ما</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-left"></i>کار ما چیست ؟</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-left"></i>خدمات ما</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-left"></i>تماس</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <h2>آیا سوالی دارید؟</h2>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li><a href="#"><span class="bx bx-map"></span><span class="text">استان تهران , باغ فیض , خیابان سوم , کوچه شهید مجید محمدی , ساختمان نیلو</span></a></li>
+                                    <li><a href="#"><span class="bx bxs-phone-call"></span><span class="text">916 856 435 98+</span></a></li>
+                                    <li><a href="#"><span class="bx bx-envelope"></span><span class="text">email@example.com</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="copy-right mt-2 mb-1">
+                            <p>کپی رایت <span class="title-span">© 2025.</span> تمامی حقوق این سایت محفوظ است.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ====== Footer section ====== -->
+
+    </main>
+
+    <!-- Scripts Js -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+    <!-- Switcher -->
+    <script src="{% static 'assets/js/switcher.js' %}"></script>
+    <!-- Bootstrap Js -->
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Isotop Js -->
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+</body>
+
+</html>

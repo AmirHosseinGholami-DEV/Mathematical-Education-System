@@ -1,0 +1,106 @@
+body {
+    direction: rtl !important
+}
+
+.datepicker-plot-area {
+    font-family: var(--font-secondary)
+}
+
+.rbt-meta li i {
+    float: right
+}
+
+@media only screen and (max-width:768px) {
+    .fixdrag {
+        overflow-x: hidden !important
+    }
+}
+
+* {
+    letter-spacing: 0 !important
+}
+
+.rbt-flipbox .rbt-flipbox-wrap .rbt-flipbox-face {
+    align-items: flex-start !important
+}
+
+.active-dark-mode header.rbt-header.rbt-header-8.rbt-transparent-header,
+.bg_image--1,
+.bg_image--10,
+.bg_image--11,
+.bg_image--12,
+.bg_image--13,
+.bg_image--19,
+.bg_image--2,
+.bg_image--3,
+.bg_image--4,
+.bg_image--5,
+.bg_image--6,
+.bg_image--7,
+.bg_image--8,
+.bg_image--9,
+.news-text>img,
+.rbt-banner-1 .content .shape-wrapper img,
+.thumbnail img,
+.transparent-button i {
+    transform: rotateY(180deg)
+}
+
+.rbt-header .mainmenu-nav .mainmenu li.has-dropdown:hover>.submenu,
+.rbt-header .mainmenu-nav .mainmenu li.has-dropdown>.submenu {
+    transform: rotateY(180deg) !important
+}
+
+.active-dark-mode header.rbt-header.rbt-header-8.rbt-transparent-header>*,
+.bg_image--10>*,
+.bg_image--11>*,
+.bg_image--12>*,
+.bg_image--13>*,
+.bg_image--19>*,
+.bg_image--1>*,
+.bg_image--2>*,
+.bg_image--3>*,
+.bg_image--4>*,
+.bg_image--5>*,
+.bg_image--6>*,
+.bg_image--7>*,
+.bg_image--8>*,
+.bg_image--9>*,
+.rbt-header .mainmenu-nav .mainmenu li.has-dropdown .submenu li a {
+    transform: rotateY(-180deg) !important
+}
+
+.rbt-header .mainmenu-nav .mainmenu li.has-dropdown .submenu li ul.submenu,
+[alt="Course images"],
+[alt="Demo Images"],
+[alt="تصاویر بنر"],
+[src^="assets/images/product/"] {
+    transform: none !important
+}
+
+.contact-address li i,
+.feather-info,
+.rbt-badge i,
+.rbt-default-sidebar-wrapper .rbt-course-details-list-wrapper li i,
+.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li i,
+.rbt-secondary-menu li a::before,
+.rbt-widget-details .rbt-course-details-list-wrapper li i,
+.rbt-widget-details .rbt-default-sidebar-list li i {
+    float: right;
+    line-height: inherit;
+    margin-left: 1px
+}
+
+.rbt-modern-select .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+    text-align: right
+}
+
+.odometer-digit {
+    font-family: var(--font-primary)
+}
+
+.odometer-inside,
+.rbt-badge-2 strong,
+a[href^="tel:"] {
+    direction: ltr
+}
